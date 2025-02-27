@@ -82,7 +82,11 @@ def identify_view():
 
 # Task 3.4 Here
 
-
+@app.route('/logout', methods=['GET'])
+def logout():
+  response = jsonify(message='Logged out')
+  unset_jwt_cookies(response)
+  return response
 
 # Task 4 Here
 
